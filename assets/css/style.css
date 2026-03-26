@@ -18,12 +18,24 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #010e1b;
-  background-size: cover;
+  background: #050a11;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(18, 214, 64, 0.08) 0%, transparent 60%),
+    linear-gradient(rgba(18, 214, 64, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 214, 64, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+  background-position: center center;
   left: 0;
   right: 0;
   top: 0;
   height: 100vh;
+  z-index: -1;
+  animation: bgPulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  0% { background-size: 100% 100%, 60px 60px, 60px 60px; }
+  100% { background-size: 110% 110%, 65px 65px, 65px 65px; }
 }
 
 @media (min-width: 1024px) {
@@ -49,89 +61,96 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  transition: ease-in-out 0s;
+  transition: ease-in-out 0.4s;
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   z-index: 997;
-  overflow-y: auto;
-}
-
-#header * {
-  transition: ease-in-out 0s;
+  overflow: hidden;
 }
 
 #header h1 {
-  font-size: 48px;
-  margin-top: 0px;
+  font-size: 80px;
+  margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 800;
   font-family: "Poppins", sans-serif;
 }
 
-#header h1 a, #header h1 a:hover {
-  color: #dee2e6;
-  line-height: 1;
+#header h1 a {
+  color: #fff;
+  background: linear-gradient(135deg, #fff 0%, #12d640 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(18, 214, 64, 0.3));
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: inline-block;
 }
 
+#header h1 a:hover {
+  filter: drop-shadow(0 0 30px rgba(18, 214, 64, 0.6));
+  letter-spacing: 3px;
+  transform: skewX(-5deg) scale(1.02);
+}
+
 #header h2 {
-  font-size: 24px;
-  margin-top: 20px;
-  color: #12d640;
+  font-size: 26px;
+  margin-top: 25px;
+  color: #dee2e6;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 #header h2 span {
-  color: #ffc107;
-  border-bottom: 2px solid #1c7d32;
-  padding-bottom: 6px;
-}
-
-#header img {
-  padding: 0;
-  margin: 0;
+  color: #12d640 !important;
+  font-weight: 600;
+  border: none !important;
+  padding-bottom: 0 !important;
+  text-shadow: 0 0 10px rgba(18, 214, 64, 0.5);
 }
 
 #header .social-links {
-  margin-top: 40px;
+  margin-top: 45px;
   display: flex;
+  gap: 15px;
 }
 
 #header .social-links a {
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
   color: #fff;
-  line-height: 1;
-  margin-right: 8px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #header .social-links a:hover {
-  background: #1c7d32;
+  background: #12d640;
+  color: #fff;
+  transform: translateY(-5px) rotate(10deg);
+  box-shadow: 0 10px 20px rgba(18, 214, 64, 0.3);
+  border-color: #12d640;
 }
 
 @media (max-width: 992px) {
   #header h1 {
-    font-size: 36px;
+    font-size: 50px;
   }
   #header h2 {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 1.5;
   }
   #header .social-links {
-    margin-top: 15px;
-  }
-  #header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 25px;
   }
 }
 
@@ -140,49 +159,40 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 /* Desktop Navigation */
 .nav-menu {
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
 .nav-menu ul {
-  display: flex;
+  display: inline-flex;
   margin: 0;
-  padding: 0;
+  padding: 10px 25px;
   list-style: none;
-}
-
-.nav-menu li + li {
-  margin-left: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  gap: 15px;
 }
 
 .nav-menu a {
   display: block;
   position: relative;
   color: #fff;
-  font-size: 19px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-.nav-menu a:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #9e7f25;
-  visibility: hidden;
-  width: 0px;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .active > a:before {
-  visibility: visible;
-  width: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 15px !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #12d640;
+  background: rgba(18, 214, 64, 0.1);
   text-decoration: none;
 }
 
@@ -271,12 +281,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header Top */
 #header.header-top {
-  height: 90px;
+  height: 80px;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  background: #09203a;
+  background: rgba(5, 10, 17, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid rgba(18, 214, 64, 0.2);
 }
 
 #header.header-top .social-links, #header.header-top h2 {
