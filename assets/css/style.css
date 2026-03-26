@@ -384,72 +384,132 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# About
+# About Me Enhancement
 --------------------------------------------------------------*/
+.about-me .profile-blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  border: 4px solid #12d640;
+  box-shadow: 0 0 20px rgba(18, 214, 64, 0.4);
+  animation: blobAnimation 8s ease-in-out infinite alternate;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+@keyframes blobAnimation {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.about-me .profile-blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-me .profile-blob:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(18, 214, 64, 0.6);
+}
+
 .about-me .content h3 {
   font-weight: 700;
-  font-size: 26px;
-  color: #1c7d32;
+  font-size: 32px;
+  color: #12d640;
+  margin-bottom: 20px;
 }
 
-.about-me .content ul {
-  list-style: none;
-  padding: 0;
+.about-me .info-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
 }
 
-.about-me .content ul li {
-  padding-bottom: 10px;
+.info-pill {
+  padding: 8px 18px;
+  background: rgba(18, 214, 64, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(18, 214, 64, 0.2);
+  border-radius: 30px;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
-.about-me .content ul i {
-  font-size: 20px;
-  padding-right: 2px;
-  color: #1c7d32;
+.info-pill:hover {
+  background: rgba(18, 214, 64, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(18, 214, 64, 0.2);
 }
 
-.about-me .content p:last-child {
-  margin-bottom: 0;
+.info-pill i {
+  color: #12d640;
+  font-size: 18px;
 }
+
 
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
-.counts {
-  padding: 70px 0 60px;
+/*--------------------------------------------------------------
+# Achievement Titles
+--------------------------------------------------------------*/
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+  padding: 20px 0;
 }
 
-.counts .count-box {
-  padding: 30px 30px 25px 30px;
-  width: 100%;
-  position: relative;
+.achievement-tile {
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.counts .count-box i {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 12px;
-  color: #1c7d32;
-  border-radius: 50px;
+.achievement-tile:hover {
+  background: rgba(18, 214, 64, 0.05);
+  border-color: rgba(18, 214, 64, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-.counts .count-box span {
+.achievement-tile i {
+  font-size: 32px;
+  color: #12d640;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(18, 214, 64, 0.3);
+}
+
+.achievement-tile h3 {
   font-size: 36px;
-  display: block;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
+  margin: 0;
 }
 
-.counts .count-box p {
-  padding: 0;
+.achievement-tile p {
+  font-size: 15px;
+  color: #adb5bd;
   margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-weight: 500;
 }
 
 /*--------------------------------------------------------------
@@ -494,29 +554,35 @@ section .container {
   display: flex;
   align-items: center;
   padding: 20px;
-  background: #09203a;
-  transition: ease-in-out 0.3s;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
 }
 
+.interests .icon-box:hover {
+  background: rgba(18, 214, 64, 0.08);
+  border-color: rgba(18, 214, 64, 0.3);
+  transform: translateX(10px);
+  box-shadow: 0 5px 25px rgba(18, 214, 64, 0.1);
+}
 
 .interests .icon-box i {
   font-size: 32px;
-  padding-right: 10px;
+  padding-right: 15px;
   line-height: 1;
 }
 
 .interests .icon-box h3 {
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   padding: 0;
-  line-height: 1;
   font-size: 16px;
   color: #fff;
 }
 
-.interests .icon-box:hover {
-  background: #042b56eb;
-}
 
 /*--------------------------------------------------------------
 # Testimonials
