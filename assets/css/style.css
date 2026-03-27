@@ -513,6 +513,78 @@ section .container {
 }
 
 /*--------------------------------------------------------------
+# Badges Module
+--------------------------------------------------------------*/
+.badges-module {
+  text-align: center;
+}
+
+.thm-badge-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 150px;
+}
+
+.thm-badge-card:hover {
+  background: rgba(18, 214, 64, 0.06);
+  border-color: rgba(18, 214, 64, 0.35);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(18, 214, 64, 0.15);
+  text-decoration: none;
+}
+
+.thm-badge-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid rgba(18, 214, 64, 0.3);
+  padding: 6px;
+  background: rgba(18, 214, 64, 0.05);
+  transition: all 0.4s ease;
+}
+
+.thm-badge-card:hover .thm-badge-img {
+  border-color: #12d640;
+  box-shadow: 0 0 20px rgba(18, 214, 64, 0.25);
+}
+
+.thm-badge-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.thm-badge-platform {
+  font-size: 11px;
+  color: #12d640;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.thm-badge-name {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+/*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
 .skills .progress {
