@@ -662,7 +662,15 @@
           </div>
         </div>
       </div>
-      <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
+      <!-- Visitor Counter -->
+      <div class="visitor-counter-wrap" data-aos="fade-up" data-aos-delay="200">
+        <div class="visitor-counter-pill" id="visitor-counter-pill">
+          <i class="bx bx-globe"></i>
+          <span class="vc-label">Total Visitors</span>
+          <span class="vc-divider">|</span>
+          <span class="vc-count" id="visitor-count">—</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -687,6 +695,40 @@
       backSpeed: 40,
       backDelay: 2000
     });
+  </script>
+
+  <!-- Visitor Counter Script -->
+  <script>
+    (function () {
+      // CountAPI – free, no-backend hit counter
+      // Key: benghi254-github-io / page-visits
+      var apiUrl = 'https://api.countapi.xyz/hit/benghi254.github.io/page-visits';
+      fetch(apiUrl)
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          var el = document.getElementById('visitor-count');
+          if (el && data && data.value !== undefined) {
+            // Animate the count up
+            var target = data.value;
+            var duration = 1200;
+            var start = Math.max(0, target - 80);
+            var startTime = null;
+            function step(timestamp) {
+              if (!startTime) startTime = timestamp;
+              var progress = Math.min((timestamp - startTime) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(start + eased * (target - start)).toLocaleString();
+              if (progress < 1) requestAnimationFrame(step);
+              else el.textContent = target.toLocaleString();
+            }
+            requestAnimationFrame(step);
+          }
+        })
+        .catch(function () {
+          var el = document.getElementById('visitor-count');
+          if (el) el.textContent = '—';
+        });
+    })();
   </script>
 
   <!-- Template Main JS File -->
