@@ -47,6 +47,10 @@
     gtag('config', 'UA-169007209-3');
   </script>
 
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://benghi254.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
 
 
   <!-- =======================================================
@@ -697,19 +701,18 @@
     });
   </script>
 
-  <!-- Visitor Counter Script -->
+  <!-- Visitor Counter Script (GoatCounter public API) -->
   <script>
     (function () {
-      // CountAPI – free, no-backend hit counter
-      // Key: benghi254-github-io / page-visits
-      var apiUrl = 'https://api.countapi.xyz/hit/benghi254.github.io/page-visits';
+      // GoatCounter public counter endpoint for the root path
+      var apiUrl = 'https://benghi254.goatcounter.com/counter//.json';
       fetch(apiUrl)
         .then(function (res) { return res.json(); })
         .then(function (data) {
           var el = document.getElementById('visitor-count');
-          if (el && data && data.value !== undefined) {
-            // Animate the count up
-            var target = data.value;
+          var raw = data && (data.count_unique !== undefined ? data.count_unique : parseInt((data.count || '0').replace(/,/g, ''), 10));
+          if (el && !isNaN(raw)) {
+            var target = raw;
             var duration = 1200;
             var start = Math.max(0, target - 80);
             var startTime = null;
