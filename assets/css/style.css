@@ -1756,3 +1756,199 @@ section .container {
   min-width: 60px;
   text-align: center;
 }
+
+/*--------------------------------------------------------------
+# Professional Visual Enhancements
+--------------------------------------------------------------*/
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(18, 214, 64, 0.1);
+  border: 1px solid rgba(18, 214, 64, 0.3);
+  border-radius: 30px;
+  font-size: 13px;
+  color: #12d640;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-tagline {
+  font-size: 18px;
+  color: #a0aec0;
+  max-width: 680px;
+  margin: 15px auto 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #12d640 0%, #0ea030 100%);
+  color: #050a11 !important;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(18, 214, 64, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(18, 214, 64, 0.5);
+  background: linear-gradient(135deg, #15ea47 0%, #12d640 100%);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(18, 214, 64, 0.4);
+  color: #12d640 !important;
+  transform: translateY(-3px);
+}
+
+/* Coursework Pills */
+.coursework-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.course-pill {
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  font-size: 14px;
+  color: #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.course-pill i {
+  color: #12d640;
+  font-size: 16px;
+}
+
+.course-pill:hover {
+  background: rgba(18, 214, 64, 0.08);
+  border-color: rgba(18, 214, 64, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Skills Category Card & Chips */
+.skill-category-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.skill-category-card:hover {
+  border-color: rgba(18, 214, 64, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category-card .category-title {
+  color: #12d640;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.skill-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.skill-chip:hover {
+  background: rgba(18, 214, 64, 0.1);
+  border-color: rgba(18, 214, 64, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(18, 214, 64, 0.15);
+}
+
+.skill-chip img {
+  height: 26px;
+  width: auto;
+  max-width: 90px;
+  object-fit: contain;
+}
+
+.skill-chip span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Footer Styling */
+#footer {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(5, 10, 17, 0.9);
+  position: relative;
+  z-index: 2;
+}
+
+#footer p {
+  color: #cbd5e1;
+  margin: 0;
+  font-size: 14px;
+}
+
+#footer .footer-subtext {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 5px;
+}
